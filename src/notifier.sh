@@ -1,8 +1,9 @@
 #!/bin/bash
 
-echo $OWNER $1
-echo $REPO $2
-echo $RUNID $3
+OWNER=$1
+REPO=$2
+RUNID=$3
+userId="115530103846859678807"
 
 # Prepare JSON body
 BODY=$(cat <<EOF
@@ -17,5 +18,5 @@ EOF
 
 # Send HTTP POST request
 curl -X POST "https://chat.googleapis.com/v1/spaces/AAQAPlQnQlQ/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=01UfofmGc2lS0q-h3BoVpSrwKksjiI-ahKnCTcWSfs0" \
-  -H 'Content-Type: application/json' \
-  -d $BODY
+  -H "Content-Type: application/json" \
+  -d "$BODY"
