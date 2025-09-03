@@ -13,4 +13,4 @@ jobs:
           RUNID=${{ github.run_id }}
           REPO=${{ github.repository }}
           OWNER=${{ github.repository_owner }}
-          ../../..  /src/notifier.sh $RUNID $REPO $OWNER
+          ../../../src/notifier.sh $RUNID $REPO $OWNER
