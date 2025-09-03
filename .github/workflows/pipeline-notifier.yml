@@ -1,0 +1,16 @@
+name: pipeline-notifier.yml
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run_shell:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Adding Githun detials to ENV
+        run : |
+          RUNID=${{ github.run_id }}
+          REPO=${{ github.repository }}
+          OWNER=${{ github.repository_owner }}
+          ./src/notifier.sh $RUNID $REPO $OWNER
