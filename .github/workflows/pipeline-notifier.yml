@@ -13,4 +13,8 @@ jobs:
           RUNID=${{ github.run_id }}
           REPO=${{ github.repository }}
           OWNER=${{ github.repository_owner }}
-          ../../src/notifier.sh $RUNID $REPO $OWNER
+
+      - name: Running Shell Script
+        run: |
+          chmod +x ./src/notifier.sh
+          ./src/notifier.sh $RUNID $REPO $OWNER
